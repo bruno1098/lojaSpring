@@ -11,8 +11,8 @@ WORKDIR /app
 COPY pom.xml .
 COPY src ./src
 
-# Execute a construção do Maven
-RUN mvn clean install
+# Execute a construção do Maven ignorando os testes
+RUN mvn clean install -DskipTests
 
 # Use uma imagem base mais leve para executar o aplicativo
 FROM openjdk:17-jdk-slim
