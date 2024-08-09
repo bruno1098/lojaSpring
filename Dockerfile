@@ -8,8 +8,8 @@ RUN apt-get update && apt-get install openjdk-17-jdk maven -y
 WORKDIR /app
 
 # Copie o arquivo pom.xml e o código-fonte do projeto para o contêiner
-COPY docker/pom.xml .
-COPY docker/src ./src
+COPY pom.xml .
+COPY src ./src
 
 # Execute a construção do Maven
 RUN mvn clean install
