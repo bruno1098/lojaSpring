@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres
+    ports:
+      - "5432:5432"
+    expose:
+      - "5432"
+    environment:
+      - POSTGRES_USER=bruno
+      - POSTGRES_PASSWORD=teste
+      - POSTGRES_DB=db
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+volumes:
+  pg_data:
